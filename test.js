@@ -22,7 +22,7 @@ describe("Odd Even Numbers Custom Sorting", () => {
     // Odd - 1,3,7 ,Even - 2,4,16
     expect(customSorting([1, 2, 3, 4, 7, 16])).toEqual([1, 3, 7, 2, 4, 16]);
 
-    // Odd - 3,5,6 ,Even - 2,18
+    // Odd - 3,5,7 ,Even - 2,18
     expect(customSorting([5, 3, 2, 7, 18])).toEqual([3, 5, 7, 2, 18]);
   });
 });
