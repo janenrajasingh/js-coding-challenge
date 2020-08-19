@@ -6,31 +6,33 @@
 module.exports.getPermutations = (inputArr) => {
   const resultArr = [];
 
-  function permuteFunction(inputArr, index = 0) {
+  /**
+   * Declare recursive function to permutate
+   */
+  const permutateFunction = (inputArr, index = 0) => {
+    // Directly Push for last element
     if (index === inputArr.length) {
       const newArr = inputArr;
       resultArr.push(newArr);
       return;
     }
-    // Initial Function Execution for 1st element
-    permuteFunction(inputArr, index + 1);
 
-    // Declaring permute function
+    // Initial Function Execution for 1st element
+    permutateFunction(inputArr, index + 1);
+
     for (let i = index + 1; i < inputArr.length; i++) {
       let temp = inputArr[index];
       inputArr[index] = inputArr[i];
       inputArr[i] = temp;
-
-      // Get permute for every element of the array
-      permuteFunction(inputArr, index + 1);
-
+      // Permute every element of the array
+      permutateFunction(inputArr, index + 1);
       temp = inputArr[index];
       inputArr[index] = inputArr[i];
       inputArr[i] = temp;
     }
-  }
+  };
 
-  // Execute the permute function
-  permuteFunction(inputArr);
+  // Execute the permutate function
+  permutateFunction(inputArr);
   return resultArr;
 };
