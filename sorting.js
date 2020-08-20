@@ -20,7 +20,7 @@ const sortArray = (inputArr) => {
  * @param {array} arrData List of numbers needs to be sorted in custom way
  * @returns {array} The array contains the given numbers sorted in odd and even
  */
-module.exports.customSorting = (arrData) => {
+module.exports.customSorting = (arrData = []) => {
   //to sort array if not sorted already
   input = sortArray(arrData);
   let evenArr = [];
