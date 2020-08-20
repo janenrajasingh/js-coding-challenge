@@ -11,6 +11,11 @@ describe("Unique Permutations Function", () => {
 
     // Expected Permutations - [1,2,3], [2,1,3], [3,2,1], [1,3,2], [3,1,2], [2,3,1]
     expect(getPermutations([1, 2, 3])).toHaveLength(6);
+
+    // Expects 0 when input is undefined
+    expect(getPermutations()).toHaveLength(0);
+    // Expects 0 when input is an empty array
+    expect(getPermutations([])).toHaveLength(0);
   });
 });
 
@@ -24,5 +29,13 @@ describe("Odd Even Numbers Custom Sorting", () => {
 
     // Odd - 3,5,7 ,Even - 2,18
     expect(customSorting([5, 3, 2, 7, 18])).toEqual([3, 5, 7, 2, 18]);
+
+    // Odd - 3,5,7 ,Even - null
+    expect(customSorting([9, 13, 5])).toEqual([5, 9, 13]);
+
+    // Expects 0 when input is undefined
+    expect(customSorting()).toEqual([]);
+    // Expects 0 when input is an empty array
+    expect(customSorting([])).toEqual([]);
   });
 });
